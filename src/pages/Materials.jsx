@@ -31,8 +31,15 @@ function Materials() {
         <div className="page-container materials-page">
             <section className="page-header custom-header">
                 <div className="container">
-                    <h1>Interior Materials</h1>
-                    <p>Premium raw materials for exquisite interiors</p>
+                    <div className="header-flex">
+                        <div>
+                            <h1>Interior Materials</h1>
+                            <p>Premium raw materials for exquisite interiors</p>
+                        </div>
+                        <button className="btn btn-primary" onClick={() => openEnquiry('General Material Enquiry')}>
+                            Enquire for Materials
+                        </button>
+                    </div>
                 </div>
             </section>
 

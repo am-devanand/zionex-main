@@ -13,6 +13,21 @@
     padding-bottom: 6rem;
 }
 
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+@media (max-width: 768px) {
+    .header-flex {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+}
+
 .category-title {
     font-size: 1.5rem;
     color: var(--rich-brown);
