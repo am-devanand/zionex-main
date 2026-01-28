@@ -1,0 +1,78 @@
+/* Products Grid Modernization */
+
+.product-card {
+    border-radius: 0;
+    /* Boxier, more modern edge? Or softer? Let's go minimal radius */
+    border-radius: var(--radius-sm);
+    background: white;
+    box-shadow: none;
+    transition: all 0.4s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.product-image img {
+    width: 100%;
+    height: 350px;
+    /* Fixed height for uniformity */
+    object-fit: cover;
+    filter: grayscale(10%);
+    /* Subtle desaturation for elegance */
+    transition: all 0.5s ease;
+}
+
+.product-card:hover .product-image img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.product-type {
+    font-size: 0.75rem;
+    color: var(--gold);
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.product-info h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--rich-brown);
+    margin: 0;
+}
+
+.btn-secondary.center-centered-btn {
+    background: white;
+    border: none;
+    padding: 1rem 2rem;
+    color: var(--rich-brown);
+    font-weight: 600;
+    border-radius: 100px;
+}
+
+.btn-secondary.center-centered-btn:hover {
+    background: var(--rich-brown);
+    color: white;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    padding: 2rem 0;
+}
+
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}

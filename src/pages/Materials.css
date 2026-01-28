@@ -1,0 +1,54 @@
+.materials-page {
+    background-color: var(--white);
+    min-height: 100vh;
+}
+
+.custom-header h1 {
+    color: var(--rich-brown);
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.materials-container {
+    padding-bottom: 6rem;
+}
+
+.category-title {
+    font-size: 1.5rem;
+    color: var(--rich-brown);
+    font-weight: 500;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.material-btn {
+    background-color: var(--warm-grey);
+    color: var(--rich-brown);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    /* Subtle border */
+    border-radius: 100px;
+    /* Fully rounded pills */
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    min-width: auto;
+    /* Let text define width */
+    flex: 0 1 auto;
+    text-align: center;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+.material-btn:hover {
+    background-color: var(--rich-brown);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.section-divider {
+    margin-top: 4rem;
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
