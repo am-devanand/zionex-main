@@ -41,6 +41,10 @@
     align-items: center;
 }
 
+.mobile-nav-logo {
+    display: none;
+}
+
 .nav-link {
     font-weight: 500;
     color: var(--dark-charcoal);
@@ -71,17 +75,122 @@
     width: 100%;
 }
 
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
 .menu-toggle span {
     width: 25px;
     height: 2px;
     background: var(--rich-brown);
     border-radius: 2px;
     transition: all var(--transition-base);
+    transform-origin: center;
+}
+
+/* Hamburger Animation */
+.menu-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 @media (max-width: 768px) {
-    .nav {
+    .header-content {
+        padding: 1rem 0;
+    }
+
+    .menu-toggle {
+        display: flex;
+        position: relative;
+        z-index: 1002;
+        /* Higher than nav to stay visible */
+    }
+
+    .menu-toggle.open span {
         background: var(--white);
+        /* White 'X' on dark background */
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        /* Full viewport height */
+        width: 100%;
+        /* Full width for mobile for better experience */
+        background: #121212;
+        /* Dark theme background */
+        flex-direction: column;
+        justify-content: flex-start;
+        /* Align to top */
+        align-items: center;
         gap: 2rem;
+        box-shadow: none;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1001;
+        padding: 8rem 2rem 2rem;
+        /* More top padding for logo */
+        visibility: hidden;
+        /* Hide when closed to prevent interaction */
+    }
+
+    .mobile-nav-logo {
+        display: block;
+        position: absolute;
+        top: 1.2rem;
+        left: 2rem;
+    }
+
+    .mobile-nav-logo h1 {
+        font-size: 1.8rem;
+        color: var(--white);
+        margin: 0;
+    }
+
+    .nav.open {
+        transform: translateX(0);
+        visibility: visible;
+    }
+
+    .nav-link {
+        font-size: 1.5rem;
+        /* Larger font for mobile */
+        font-weight: 500;
+        color: rgba(255, 255, 255, 0.8);
+        /* Light text for dark theme */
+        width: auto;
+        text-align: center;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+        color: var(--white);
+    }
+
+    .nav-link::after {
+        background: var(--gold);
+    }
+
+    .mobile-enquiry-btn {
+        margin-top: 1rem;
+        width: 100%;
+        max-width: 250px;
+        padding: 0.8rem 2rem;
     }
 }

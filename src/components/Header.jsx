@@ -37,6 +37,11 @@ function Header() {
                     </Link>
 
                     <nav className={`nav ${menuOpen ? 'open' : ''}`}>
+                        <div className="mobile-nav-logo">
+                            <Link to="/" onClick={() => setMenuOpen(false)}>
+                                <h1>Zionex</h1>
+                            </Link>
+                        </div>
                         {navItems.map((item) => (
                             <Link
                                 key={item.name}
@@ -47,10 +52,13 @@ function Header() {
                                 {item.name}
                             </Link>
                         ))}
+                        <Link to="/contact" className="btn btn-primary mobile-enquiry-btn" onClick={() => setMenuOpen(false)}>
+                            ENQUIRE NOW
+                        </Link>
                     </nav>
 
                     <button
-                        className="menu-toggle"
+                        className={`menu-toggle ${menuOpen ? 'open' : ''}`}
                         onClick={() => setMenuOpen(!menuOpen)}
                         aria-label="Toggle menu"
                     >
