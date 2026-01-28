@@ -62,20 +62,23 @@
 }
 
 .close-icon {
-    display: none;
-    /* Reference image doesn't explicitly show one, or it's subtle. We can hide for "classic" look or keep minimal */
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 2.5rem;
+    cursor: pointer;
+    line-height: 1;
+    z-index: 2;
+    transition: color 0.3s;
+    font-family: serif;
+    padding: 0;
 }
 
-/* Re-add minimal close for UX if needed, or user clicks overlay to close */
-
-.modal-wrapper .close-icon {
-    position: absolute;
-    top: -40px;
-    right: 0;
-    color: white;
-    font-size: 2rem;
-    display: flex;
-    /* Only show outside */
+.close-icon:hover {
+    color: #ffffff;
 }
 
 

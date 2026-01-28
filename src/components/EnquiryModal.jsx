@@ -72,7 +72,6 @@ function EnquiryModal({ isOpen, onClose, type = 'furniture', initialProduct = ''
                         onClick={onClose}
                     />
                     <div className="modal-wrapper">
-                        <button className="close-icon" onClick={onClose}>×</button>
                         <motion.div
                             className="modal-container"
                             initial={{ opacity: 0, y: 50 }}
@@ -80,6 +79,7 @@ function EnquiryModal({ isOpen, onClose, type = 'furniture', initialProduct = ''
                             exit={{ opacity: 0, y: 50 }}
                             transition={{ duration: 0.4 }}
                         >
+                            <button className="close-icon" onClick={onClose} aria-label="Close modal">×</button>
                             <h2 className="classic-title">CLASSIC ENQUIRY FORM</h2>
                             <p className="form-description">
                                 Please fill out the form below to get in touch with our team.
